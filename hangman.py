@@ -12,7 +12,7 @@ def print_status(word, lives, guessed, correct):
     for i in word:
         print_state += " _ " if i not in correct else i.upper()
 
-    # print remaining lives and uppercase characters of guessed words
+    # print remaining lives and guessed uppercase characters
     print_state += "\nLives remaining: {}".format(lives)
     if len(guessed) != 0:
         upper_guess = "".join(sorted(list(guessed))).upper()
