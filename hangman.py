@@ -72,6 +72,10 @@ def do_game(lives=6):
         # get the user's guess by ripping the first character off the string
         guess = input("Please guess a letter: ")[:1].lower()
 
+        # turn empty string into a string we can work with:
+        if guess == "":
+            guess = " "
+
         # handle that guess appropriaely and return some values
         victory, lives = handle_guess(guess, word, lives, guessed, correct)
 
