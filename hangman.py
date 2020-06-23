@@ -90,11 +90,11 @@ def do_game(lives=6):
 
 def pick_word():
     # get a random word
-    r = requests.get("https://wordunscrambler.me/random-word-generator")
+    r = requests.get("https://randomword.com/")
     soup = BeautifulSoup(r.text, features='lxml')
 
     # clean the request to get just the word
-    word = soup.find('div', {'id': 'random-word-wrapper'}).findChildren('a')[0].text.strip()
+    word = soup.find('div', {'id': 'random_word'}).text.strip()
 
     return word.lower()
 
